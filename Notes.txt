@@ -1,0 +1,42 @@
+yum install java-1.8.0-openjdk -y
+
+ rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.3.rpm
+ rpm --install elasticsearch-6.2.3.rpm
+
+ 
+ systemctl daemon-reload
+ systemctl enable elasticsearch
+ 
+ ###
+ 
+  wget https://artifacts.elastic.co/downloads/logstash/logstash-6.2.3.rpm
+   rpm --install logstash-6.2.3.rpm
+   rpm --install logstash-6.2.3.rpm
+   
+   systemctl enable logstash
+   
+   
+   ###
+   file beat
+   wget http://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.2.3-x86_64.rpm
+   rpm --install filebeat-6.2.3-x86_64.rpm
+   systemctl enable filebeat
+   systemctl status filebeat
+   systemctl start filebeat
+   
+   
+   filebeat setup
+  filebeat modules enable system
+   
+   #### KIBANA
+    rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    wget https://artifacts.elastic.co/downloads/kibana/kibana-6.2.3-x86_64.rpm
+	rpm --install kibana-6.2.3-x86_64.rpm
+   
+   systemctl enable kibana
+   
+   GEOIP
+   /usr/share/elasticsearch/bin/elasticsearch-plugin install ingest-geoip
+
+   
